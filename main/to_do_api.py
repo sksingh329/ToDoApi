@@ -22,8 +22,10 @@ def welcome():
 
 
 @app.get("/api/tasks")
-def get_tasks(category : str | None = None, status : str | None = None) -> list:
+def get_tasks(category : str, status : str ) -> list:
     """Get tasks"""
+
+    #def get_tasks(category : str | None = None, status : str | None = None) -> list:
     results = tasks
     if category:
         results = [result for result in results if result['category'] == category]
